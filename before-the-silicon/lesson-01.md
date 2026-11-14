@@ -1,36 +1,37 @@
 <!--
 author: Kyle
-version: 0.1.0
+version: 0.2.0
 language: en
 comment: Adding machines, algorithms, and programmes, before any electronics.
 -->
 
 # A machine that adds
 
-*[From the Silicon Up](https://liascript.github.io/course/?https://raw.githubusercontent.com/LordParsley/from-the-silicon-up/main/course.md) - Before the Silicon, lesson 1*
+*[From the Silicon Up](https://liascript.github.io/course/?https://raw.githubusercontent.com/LordParsley/from-the-silicon-up/main/course.md) - Before the Silicon, lesson 0*
 
-Before we meet a real computer, it is worth asking a stranger question: could you build an adding machine out of water?
+Before we meet a real computer, it is worth asking a stranger question: could you build an adding machine with no electricity in it at all?
 
-People were building calculators long before electricity. In 1642, Blaise Pascal built one from gears and dials to help with his father's tax work. Gears are fiddly, so we will use something easier to picture: canal locks, the stepped water chambers that lift boats uphill.
+People were building calculators long before electricity. In 1642, Blaise Pascal built one from gears and dials to help with his father's tax work. Water has even had a go: in 1949 the economist Bill Phillips built the MONIAC, a computer that modelled a whole national economy with water flowing through tanks and pipes. But water computes with levels, not digits.
+
+The clearest little adding machine of all uses something humbler: marbles, wood, and gravity. It really exists - people build them as workshop projects - and its one moving part works exactly like the switches inside a real chip.
 
 This lesson has no simulator and nothing to install. Allow about 25-30 minutes. The three ideas here (adding with carries, algorithms, and programmes) are the foundation for everything that follows.
 
-## The water adding machine
+## The marble adding machine
 
-Picture a row of four canal locks, side by side. Each lock is either **full** of water or **empty**. That is the whole memory of our machine.
+Picture a row of four wooden rockers, like tiny see-saws, side by side. Each rocker tips to the left or the right. That is the whole memory of our machine.
 
-A full lock means `1`. An empty lock means `0`.
+A rocker tipped to the right means `1`. Tipped to the left means `0`.
 
-Each lock has a value. Reading left to right, they are worth 8, 4, 2 and 1. The number the machine stores is the sum of the values of its full locks.
+Each rocker has a value. Reading left to right, they are worth 8, 4, 2 and 1. The number the machine stores is the sum of the values of the rockers showing `1`.
 
-Our machine, storing the number 5 (only the locks worth 4 and 1 are full, and 4 + 1 = 5):
+Our machine, storing the number 5 (only the rockers worth 4 and 1 are tipped to 1, and 4 + 1 = 5):
 
-![Four canal locks in a row, worth 8, 4, 2 and 1. The locks worth 4 and 1 are full of water; the others are empty. Together they store the number 5.](locks.svg)
+![Four rocker columns in a row, worth 8, 4, 2 and 1. The rockers worth 4 and 1 are tipped right, each holding a marble; the others are tipped left. Together they store the number 5. A fresh marble is dropping toward the worth-1 column.](marble-machine.svg)
 
-**Try it.** Click a lock to fill or empty it, and watch the stored number on the far right. The bucket button pours one bucket into the rightmost lock (add 1) - watch what happens when a lock is already full.
+**Try it.** Click a rocker to tip it, and watch the stored number on the far right. The marble button drops one marble into the rightmost column (add 1) - watch what happens when a rocker already shows `1`.
 
-<div id="wam" style="margin:1em 0;"><span style="display:inline-block; text-align:center; vertical-align:bottom; margin-right:12px;"><span style="display:block; font-size:0.85em; opacity:0.7;">worth 8</span><button class="wam-lock" data-value="8" data-full="0" style="width:76px; height:56px; border:2px solid #94a3b8; border-radius:8px; background:#e5e7eb; color:#374151; cursor:pointer;">empty</button></span><span style="display:inline-block; text-align:center; vertical-align:bottom; margin-right:12px;"><span style="display:block; font-size:0.85em; opacity:0.7;">worth 4</span><button class="wam-lock" data-value="4" data-full="0" style="width:76px; height:56px; border:2px solid #94a3b8; border-radius:8px; background:#e5e7eb; color:#374151; cursor:pointer;">empty</button></span><span style="display:inline-block; text-align:center; vertical-align:bottom; margin-right:12px;"><span style="display:block; font-size:0.85em; opacity:0.7;">worth 2</span><button class="wam-lock" data-value="2" data-full="0" style="width:76px; height:56px; border:2px solid #94a3b8; border-radius:8px; background:#e5e7eb; color:#374151; cursor:pointer;">empty</button></span><span style="display:inline-block; text-align:center; vertical-align:bottom; margin-right:12px;"><span style="display:block; font-size:0.85em; opacity:0.7;">worth 1</span><button class="wam-lock" data-value="1" data-full="0" style="width:76px; height:56px; border:2px solid #94a3b8; border-radius:8px; background:#e5e7eb; color:#374151; cursor:pointer;">empty</button></span><span style="display:inline-block; vertical-align:bottom; font-size:1.6em; margin-right:12px; padding-bottom:6px;">= <span id="wam-total">0</span></span><button id="wam-add" style="vertical-align:bottom; height:56px; padding:0 14px; border:2px solid #1d4ed8; border-radius:8px; background:#eff6ff; color:#1d4ed8; cursor:pointer;">pour in a bucket (add 1)</button></div>
-
+<div id="wam" style="margin:1em 0;"><span style="display:inline-block; text-align:center; vertical-align:bottom; margin-right:12px;"><span style="display:block; font-size:0.85em; opacity:0.7;">worth 8</span><button class="wam-lock" data-value="8" data-full="0" style="width:76px; height:56px; font-size:1.3em; border:2px solid #94a3b8; border-radius:8px; background:#e5e7eb; color:#374151; cursor:pointer;">0</button></span><span style="display:inline-block; text-align:center; vertical-align:bottom; margin-right:12px;"><span style="display:block; font-size:0.85em; opacity:0.7;">worth 4</span><button class="wam-lock" data-value="4" data-full="0" style="width:76px; height:56px; font-size:1.3em; border:2px solid #94a3b8; border-radius:8px; background:#e5e7eb; color:#374151; cursor:pointer;">0</button></span><span style="display:inline-block; text-align:center; vertical-align:bottom; margin-right:12px;"><span style="display:block; font-size:0.85em; opacity:0.7;">worth 2</span><button class="wam-lock" data-value="2" data-full="0" style="width:76px; height:56px; font-size:1.3em; border:2px solid #94a3b8; border-radius:8px; background:#e5e7eb; color:#374151; cursor:pointer;">0</button></span><span style="display:inline-block; text-align:center; vertical-align:bottom; margin-right:12px;"><span style="display:block; font-size:0.85em; opacity:0.7;">worth 1</span><button class="wam-lock" data-value="1" data-full="0" style="width:76px; height:56px; font-size:1.3em; border:2px solid #94a3b8; border-radius:8px; background:#e5e7eb; color:#374151; cursor:pointer;">0</button></span><span style="display:inline-block; vertical-align:bottom; font-size:1.6em; margin-right:12px; padding-bottom:6px;">= <span id="wam-total">0</span></span><button id="wam-add" style="vertical-align:bottom; height:56px; padding:0 14px; border:2px solid #1d4ed8; border-radius:8px; background:#eff6ff; color:#1d4ed8; cursor:pointer;">drop a marble (add 1)</button></div>
 
 <script>
 (function () {
@@ -41,7 +42,7 @@ Our machine, storing the number 5 (only the locks worth 4 and 1 are full, and 4 
   var total = document.getElementById('wam-total');
   function paint(b) {
     var full = b.dataset.full === '1';
-    b.textContent = full ? 'full' : 'empty';
+    b.textContent = full ? '1' : '0';
     b.style.background = full ? '#2563eb' : '#e5e7eb';
     b.style.color = full ? '#ffffff' : '#374151';
     b.style.borderColor = full ? '#1d4ed8' : '#94a3b8';
@@ -71,28 +72,28 @@ Our machine, storing the number 5 (only the locks worth 4 and 1 are full, and 4 
 })();
 </script>
 
-Here is the machine storing the number 5. Only the locks worth 4 and 1 are full, and 4 + 1 = 5:
+Here is the machine storing the number 5. Only the rockers worth 4 and 1 show `1`, and 4 + 1 = 5:
 
 | worth 8 | worth 4 | worth 2 | worth 1 | number stored |
 | --- | --- | --- | --- | --- |
-| empty | full | empty | full | 5 |
+| 0 | 1 | 0 | 1 | 5 |
 
-And here are six different numbers side by side. Read **down a column** to see the four locks for that number:
+And here are six different numbers side by side. Read **down a column** to see the four rockers for that number:
 
-| Lock | Storing 0 | Storing 1 | Storing 2 | Storing 3 | Storing 4 | Storing 5 |
+| Rocker | Storing 0 | Storing 1 | Storing 2 | Storing 3 | Storing 4 | Storing 5 |
 | --- | --- | --- | --- | --- | --- | --- |
-| worth 8 | empty | empty | empty | empty | empty | empty |
-| worth 4 | empty | empty | empty | empty | full | full |
-| worth 2 | empty | empty | full | full | empty | empty |
-| worth 1 | empty | full | empty | full | empty | full |
+| worth 8 | 0 | 0 | 0 | 0 | 0 | 0 |
+| worth 4 | 0 | 0 | 0 | 0 | 1 | 1 |
+| worth 2 | 0 | 0 | 1 | 1 | 0 | 0 |
+| worth 1 | 0 | 1 | 0 | 1 | 0 | 1 |
 
-Writing only the fulls and empties as `1`s and `0`s, the last column is `0101`, which means 5. This way of writing numbers is called **binary**, and it is exactly how computers store numbers, using tiny switches instead of water.
+Reading a column from top to bottom gives a pattern like `0101`, which means 5. This way of writing numbers is called **binary**, and it is exactly how computers store numbers, using tiny switches instead of rockers.
 
-With four locks, the largest number we can store is `1111` = 8 + 4 + 2 + 1 = 15. Add one more bucket and every lock empties again: the water spills out of the last lock and the machine starts back at 0. Real machines do this too; it is called **overflow**.
+With four rockers, the largest number we can store is `1111` = 8 + 4 + 2 + 1 = 15. Drop one marble too many and every rocker flips back to `0`: the marble falls clean out of the machine, and the count starts again at 0. Real machines, wooden and silicon alike, do this too; it is called **overflow**.
 
 ## 1. Read the machine
 
-The locks show: full, empty, full, empty. In digits, that is `1010`.
+The rockers show, left to right: `1`, `0`, `1`, `0`.
 
 What number is stored?
 
@@ -101,33 +102,33 @@ What number is stored?
 <details>
 <summary>Worked answer</summary>
 
-Full locks are worth 8 and 2. The empty ones contribute nothing.
+The rockers worth 8 and 2 show `1`. The others contribute nothing.
 
 8 + 2 = 10.
 
-With four locks, the largest number we can store is `1111` = 8 + 4 + 2 + 1 = 15.
+With four rockers, the largest number we can store is `1111` = 8 + 4 + 2 + 1 = 15.
 
 </details>
 
 ## One rule for adding
 
-Here is the whole trick. To **add 1**, pour a bucket of water into the rightmost lock (the one worth 1), and follow this rule:
+Here is the whole trick. To **add 1**, drop a marble into the rightmost column (the one worth 1), and follow this rule:
 
-> When water arrives at a lock: if the lock is empty, it fills, and you stop. If the lock is full, it overflows: the lock empties, and the water flows into the next lock to the left, which follows the same rule.
+> When a marble lands on a rocker: if the rocker shows `0`, it tips to `1` and catches the marble, and you stop. If the rocker shows `1`, it tips back to `0` and the marble rolls on to the next column to the left, which follows the same rule.
 
 Watch it add 1 to 3 (`0011`):
 
-- A bucket arrives at the 1-lock. It is full, so it empties, and the water flows left to the 2-lock.
-- The 2-lock is full, so it empties, and the water flows left to the 4-lock.
-- The 4-lock is empty, so it fills. Stop.
+- The marble lands on the 1-rocker. It shows `1`, so it tips to `0` and the marble rolls left to the 2-rocker.
+- The 2-rocker shows `1`, so it tips to `0` and the marble rolls left to the 4-rocker.
+- The 4-rocker shows `0`, so it tips to `1` and catches the marble. Stop.
 
 The pattern is now `0100`, which is 4. We just computed 3 + 1 = 4.
 
-That moment when a full lock empties and pushes water into the next lock is called a **carry**. You already know carries from school arithmetic: 7 + 5 makes 12, so you write down 2 and carry the 1. Our locks carry whenever they pass 1, because a lock can only hold 0 or 1.
+That moment when a rocker tips back to `0` and sends the marble one column left is called a **carry**. You already know carries from school arithmetic: 7 + 5 makes 12, so you write down 2 and carry the 1. Our rockers carry whenever they pass 1, because a rocker can only hold 0 or 1.
 
 ## 2. Run the machine
 
-The locks show `0111` (that is 7). Follow the rule and add 1.
+The rockers show `0111` (that is 7). Follow the rule and add 1.
 
 What is the new pattern? Type four digits.
 
@@ -136,35 +137,35 @@ What is the new pattern? Type four digits.
 <details>
 <summary>Worked answer</summary>
 
-- The 1-lock is full: it empties, water flows left.
-- The 2-lock is full: it empties, water flows left.
-- The 4-lock is full: it empties, water flows left.
-- The 8-lock is empty: it fills. Stop.
+- The 1-rocker shows `1`: it tips to `0`, the marble rolls left.
+- The 2-rocker shows `1`: it tips to `0`, the marble rolls left.
+- The 4-rocker shows `1`: it tips to `0`, the marble rolls left.
+- The 8-rocker shows `0`: it tips to `1` and catches the marble. Stop.
 
-The pattern `0111` becomes `1000`: the number 8. The carry rippled through three locks before finding an empty one, like a wave climbing the staircase of locks.
+The pattern `0111` becomes `1000`: the number 8. The marble travelled through three rockers before finding one showing `0`.
 
 </details>
 
-Adding bigger numbers, subtracting, even multiplying, can all be built from this one idea with a few more rules. Real processors do exactly this, with electricity standing in for water.
+Adding bigger numbers, subtracting, even multiplying, can all be built from this one idea with a few more rules. Real processors do exactly this, with electricity standing in for marbles.
 
 ## The rule is an algorithm
 
 Notice what kind of thing our adding rule is:
 
 - It is a **finite** list of steps.
-- Every step is **completely mechanical**: "if full, empty it and pour left" requires no judgement, no cleverness, no guesses.
+- Every step is **completely mechanical**: "if the rocker shows `1`, tip it to `0` and send the marble left" requires no judgement, no cleverness, no guesses.
 - It **always works**, for any starting pattern.
 
 A set of steps like that is called an **algorithm**: a recipe so precise that a machine, or a person following it thoughtlessly, gets the right answer every time. Long division is an algorithm. A cake recipe mostly is one. "Season to taste" is not, because it asks for judgement.
 
-In the 1930s, the mathematician Alan Turing asked a daring question: is there a single kind of machine that could follow *any* algorithm? His answer, the **Turing machine**, is a hypothetical device that reads and writes symbols on a tape by following rules exactly as simple as our lock rule. Turing showed this humble machine can compute anything that any algorithm can compute. Every computer ever built, from the water adder to your phone, is one of these machines wearing different clothes. That claim is called the **Church-Turing thesis**, and nothing has ever broken it.
+In the 1930s, the mathematician Alan Turing asked a daring question: is there a single kind of machine that could follow *any* algorithm? His answer, the **Turing machine**, is a hypothetical device that reads and writes symbols on a tape by following rules exactly as simple as our marble rule. Turing showed this humble machine can compute anything that any algorithm can compute. Every computer ever built, from the marble adder to your phone, is one of these machines wearing different clothes. That claim is called the **Church-Turing thesis**, and nothing has ever broken it.
 
 ## 3. Spot the algorithm
 
 Which of these is an algorithm?
 
-[[X]] To add 1: pour water into the rightmost lock. If it is full, empty it and pour into the next lock left; if it is empty, fill it and stop.
-[[ ]] Keep pouring water around until the answer feels right.
+[[X]] To add 1: drop a marble into the rightmost column. When it lands on a rocker showing `0`, the rocker tips to `1` and catches it; on a `1`, the rocker tips to `0` and the marble rolls left.
+[[ ]] Keep dropping marbles around the machine until the answer feels right.
 [[ ]] Ask the machine politely to think of a bigger number.
 
 <details>
@@ -216,9 +217,9 @@ The loop detector: non-computable. Speed is not the issue. Even infinitely fast 
 
 One more idea, and it might be the deepest.
 
-Our water machine had its rule drilled into whoever operated it. But we could write the rule down: "when water arrives, if full then empty and pour left, else fill". Written down, the rule is just symbols on paper: **data**.
+Our marble machine had its rule drilled into whoever operated it. But we could write the rule down: "when a marble lands on a rocker, if it shows `1` then tip it to `0` and send the marble left, else tip it to `1` and catch it". Written down, the rule is just symbols on paper: **data**.
 
-Now imagine a machine that reads its rules from the same place it keeps its numbers. Feed it the adding rules and it adds. Feed it different rules and it sorts names, or plays music, without changing a single lock or wire. That is a **universal machine**, and it is what a computer is.
+Now imagine a machine that reads its rules from the same place it keeps its numbers. Feed it the adding rules and it adds. Feed it different rules and it sorts names, or plays music, without changing a single rocker or rail. That is a **universal machine**, and it is what a computer is.
 
 A music box works this way: the tune is not built into the box, it is a pattern of bumps on a metal cylinder, and swapping cylinders swaps the song. Early looms wove patterns from punched cards. A modern computer stores its programmes in memory, as numbers, right next to the numbers they work on.
 
@@ -249,14 +250,14 @@ Wiring the instructions into the machine was how some very early computers worke
 
 ## What you have built
 
-- A working mental model of a mechanical adder: locks that are full or empty, carrying by overflow. Binary is just full-and-empty written down.
+- A working mental model of a mechanical adder: rockers that tip between `0` and `1`, carrying by passing the marble left. Binary is just tipped-and-untipped written down.
 - A definition of an **algorithm**: finite, mechanical, always right.
 - A boundary: some problems are **non-computable**, proven so, not just waiting for faster hardware.
 - The trick that makes computers universal: the **programme is data**, stored in the same memory it works on.
 
 Before finishing, explain these in your own words:
 
-- Why does adding 1 to `0111` change every lock?
+- Why does adding 1 to `0111` tip every rocker?
 - What makes "season to taste" fail as an algorithm?
 - Why can the same computer run a game and a spreadsheet without new hardware?
 
@@ -266,6 +267,8 @@ Next: [A computer you can watch](https://liascript.github.io/course/?https://raw
 
 ## References
 
+- [Matthias Wandel's binary marble adding machine](https://woodgears.ca/marbleadd/) - the real wooden machine this lesson is modelled on, with plans and a video.
 - [The Halting Problem, Computerphile](https://www.youtube.com/watch?v=macM_MtS_w4) - a friendly video proof of why the loop detector cannot exist.
 - [Turing's 1936 paper, "On Computable Numbers"](https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf) - where the universal machine first appears, for the curious.
 - [Pascal's calculator](https://en.wikipedia.org/wiki/Pascal%27s_calculator) - the 1642 gear-driven adding machine.
+- [The MONIAC](https://en.wikipedia.org/wiki/Phillips_Machine) - the 1949 water-powered computer.

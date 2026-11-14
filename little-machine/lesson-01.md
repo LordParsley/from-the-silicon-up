@@ -7,7 +7,7 @@ comment: A tiny computer you can watch, one instruction at a time.
 
 # A computer you can watch
 
-*[From the Silicon Up](https://liascript.github.io/course/?https://raw.githubusercontent.com/LordParsley/from-the-silicon-up/main/course.md) - Little Machine, lesson 2*
+*[From the Silicon Up](https://liascript.github.io/course/?https://raw.githubusercontent.com/LordParsley/from-the-silicon-up/main/course.md) - Little Machine, lesson 1*
 
 A computer follows small instructions, one at a time. In this lesson, you will make that happen yourself.
 

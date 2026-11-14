@@ -14,17 +14,17 @@ Keep the lesson and its simulator in separate browser tabs, side by side if you 
 
 ### Before the Silicon
 
-The big ideas, before any electronics: adding machines, algorithms, computability, and programmes as data.
+The big ideas, before any electronics: a marble adding machine, algorithms, computability, and programmes as data.
 
-- Lesson 1: A machine that adds - [source](before-the-silicon/lesson-01.md) - [open in the interactive viewer](https://liascript.github.io/course/?https://raw.githubusercontent.com/LordParsley/from-the-silicon-up/main/before-the-silicon/lesson-01.md)
+- Lesson 0: A machine that adds - [source](before-the-silicon/lesson-01.md) - [open in the interactive viewer](https://liascript.github.io/course/?https://raw.githubusercontent.com/LordParsley/from-the-silicon-up/main/before-the-silicon/lesson-01.md)
 
 ### Little Machine
 
 Meet the CPU one instruction at a time, using the Little Man Computer teaching machine.
 
 - Course home - [source](course.md) - [open in the interactive viewer](https://liascript.github.io/course/?https://raw.githubusercontent.com/LordParsley/from-the-silicon-up/main/course.md)
-- Lesson 2: A computer you can watch - [source](little-machine/lesson-01.md) - [open in the interactive viewer](https://liascript.github.io/course/?https://raw.githubusercontent.com/LordParsley/from-the-silicon-up/main/little-machine/lesson-01.md)
-- Lesson 3: Input and decisions - coming soon
+- Lesson 1: A computer you can watch - [source](little-machine/lesson-01.md) - [open in the interactive viewer](https://liascript.github.io/course/?https://raw.githubusercontent.com/LordParsley/from-the-silicon-up/main/little-machine/lesson-01.md)
+- Lesson 2: Input and decisions - coming soon
 
 More modules are on the way.
 
