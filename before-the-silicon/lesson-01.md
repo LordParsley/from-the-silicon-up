@@ -21,20 +21,76 @@ Picture a row of four canal locks, side by side. Each lock is either **full** of
 
 A full lock means `1`. An empty lock means `0`.
 
-Each lock has a value. Reading left to right, they are worth 8, 4, 2 and 1:
+Each lock has a value. Reading left to right, they are worth 8, 4, 2 and 1. The number the machine stores is the sum of the values of its full locks.
 
-| Lock 1 (worth 8) | Lock 2 (worth 4) | Lock 3 (worth 2) | Lock 4 (worth 1) | The number stored |
+**Try it.** Click a lock to fill or empty it, and watch the stored number on the far right. The bucket button pours one bucket into the rightmost lock (add 1) - watch what happens when a lock is already full.
+
+<div id="wam" style="display:flex; flex-wrap:wrap; gap:12px; align-items:flex-end; margin:1em 0;">
+<div style="text-align:center;"><div style="font-size:0.85em; opacity:0.7;">worth 8</div><button class="wam-lock" data-value="8" data-full="0" style="width:76px; height:56px; border:2px solid #94a3b8; border-radius:8px; background:#e5e7eb; color:#374151; cursor:pointer;">empty</button></div>
+<div style="text-align:center;"><div style="font-size:0.85em; opacity:0.7;">worth 4</div><button class="wam-lock" data-value="4" data-full="0" style="width:76px; height:56px; border:2px solid #94a3b8; border-radius:8px; background:#e5e7eb; color:#374151; cursor:pointer;">empty</button></div>
+<div style="text-align:center;"><div style="font-size:0.85em; opacity:0.7;">worth 2</div><button class="wam-lock" data-value="2" data-full="0" style="width:76px; height:56px; border:2px solid #94a3b8; border-radius:8px; background:#e5e7eb; color:#374151; cursor:pointer;">empty</button></div>
+<div style="text-align:center;"><div style="font-size:0.85em; opacity:0.7;">worth 1</div><button class="wam-lock" data-value="1" data-full="0" style="width:76px; height:56px; border:2px solid #94a3b8; border-radius:8px; background:#e5e7eb; color:#374151; cursor:pointer;">empty</button></div>
+<div style="font-size:1.6em; padding-bottom:8px;">= <span id="wam-total">0</span></div>
+<button id="wam-add" style="height:56px; padding:0 14px; border:2px solid #1d4ed8; border-radius:8px; background:#eff6ff; color:#1d4ed8; cursor:pointer;">pour in a bucket (add 1)</button>
+</div>
+
+<script>
+(function () {
+  var root = document.getElementById('wam');
+  if (!root || root.dataset.wired) return;
+  root.dataset.wired = '1';
+  var locks = Array.prototype.slice.call(root.querySelectorAll('.wam-lock'));
+  var total = document.getElementById('wam-total');
+  function paint(b) {
+    var full = b.dataset.full === '1';
+    b.textContent = full ? 'full' : 'empty';
+    b.style.background = full ? '#2563eb' : '#e5e7eb';
+    b.style.color = full ? '#ffffff' : '#374151';
+    b.style.borderColor = full ? '#1d4ed8' : '#94a3b8';
+  }
+  function update() {
+    var t = 0;
+    locks.forEach(function (b) { if (b.dataset.full === '1') t += parseInt(b.dataset.value, 10); });
+    total.textContent = t;
+  }
+  locks.forEach(function (b) {
+    b.addEventListener('click', function () {
+      b.dataset.full = (b.dataset.full === '1') ? '0' : '1';
+      paint(b); update();
+    });
+    paint(b);
+  });
+  document.getElementById('wam-add').addEventListener('click', function () {
+    var byValue = locks.slice().sort(function (a, b) { return parseInt(a.dataset.value, 10) - parseInt(b.dataset.value, 10); });
+    for (var i = 0; i < byValue.length; i++) {
+      var b = byValue[i];
+      if (b.dataset.full === '1') { b.dataset.full = '0'; paint(b); }
+      else { b.dataset.full = '1'; paint(b); break; }
+    }
+    update();
+  });
+  update();
+})();
+</script>
+
+Here is the machine storing the number 5. Only the locks worth 4 and 1 are full, and 4 + 1 = 5:
+
+| worth 8 | worth 4 | worth 2 | worth 1 | number stored |
 | --- | --- | --- | --- | --- |
-| empty | empty | empty | empty | 0 |
-| empty | empty | empty | full | 1 |
-| empty | empty | full | empty | 2 |
-| empty | empty | full | full | 3 |
-| empty | full | empty | empty | 4 |
 | empty | full | empty | full | 5 |
 
-The number stored is just the sum of the full locks' values. A lock pattern of empty, full, empty, full stores 4 + 1 = 5.
+And here are six different numbers side by side. Read **down a column** to see the four locks for that number:
 
-Writing only the fulls and empties as `1`s and `0`s, the pattern `0101` means 5. This way of writing numbers is called **binary**, and it is exactly how computers store numbers, using tiny switches instead of water.
+| Lock | Storing 0 | Storing 1 | Storing 2 | Storing 3 | Storing 4 | Storing 5 |
+| --- | --- | --- | --- | --- | --- | --- |
+| worth 8 | empty | empty | empty | empty | empty | empty |
+| worth 4 | empty | empty | empty | empty | full | full |
+| worth 2 | empty | empty | full | full | empty | empty |
+| worth 1 | empty | full | empty | full | empty | full |
+
+Writing only the fulls and empties as `1`s and `0`s, the last column is `0101`, which means 5. This way of writing numbers is called **binary**, and it is exactly how computers store numbers, using tiny switches instead of water.
+
+With four locks, the largest number we can store is `1111` = 8 + 4 + 2 + 1 = 15. Add one more bucket and every lock empties again: the water spills out of the last lock and the machine starts back at 0. Real machines do this too; it is called **overflow**.
 
 ## 1. Read the machine
 
