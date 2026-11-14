@@ -23,6 +23,10 @@ A full lock means `1`. An empty lock means `0`.
 
 Each lock has a value. Reading left to right, they are worth 8, 4, 2 and 1. The number the machine stores is the sum of the values of its full locks.
 
+Our machine, storing the number 5 (only the locks worth 4 and 1 are full, and 4 + 1 = 5):
+
+![Four canal locks in a row, worth 8, 4, 2 and 1. The locks worth 4 and 1 are full of water; the others are empty. Together they store the number 5.](locks.svg)
+
 **Try it.** Click a lock to fill or empty it, and watch the stored number on the far right. The bucket button pours one bucket into the rightmost lock (add 1) - watch what happens when a lock is already full.
 
 <div id="wam" style="display:flex; flex-wrap:wrap; gap:12px; align-items:flex-end; margin:1em 0;">
