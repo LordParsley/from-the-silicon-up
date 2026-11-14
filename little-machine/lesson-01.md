@@ -7,6 +7,8 @@ comment: A tiny computer you can watch, one instruction at a time.
 
 # A computer you can watch
 
+*[From the Silicon Up](https://liascript.github.io/course/?https://raw.githubusercontent.com/LordParsley/from-the-silicon-up/main/course.md) - Little Machine, lesson 1*
+
 A computer follows small instructions, one at a time. In this lesson, you will make that happen yourself.
 
 We will use the **Little Man Computer (LMC)**: a deliberately small teaching machine. No installation, no real assembly toolchain, and no need to memorise everything.
@@ -291,6 +293,8 @@ Before finishing, explain these in your own words:
 - In the loop, why is `LDA START` outside LOOP?
 
 Next time: accept input and choose between two different results.
+
+[Back to the course home](https://liascript.github.io/course/?https://raw.githubusercontent.com/LordParsley/from-the-silicon-up/main/course.md)
 
 ## References
 
