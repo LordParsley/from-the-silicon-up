@@ -19,18 +19,16 @@ No installation, no accounts, no prior programming needed. If you can open a lin
 
 A laptop or desktop will be more comfortable than a phone.
 
-## Modules
+## Little Machine
 
-### Little Machine
-
-Meet the CPU one instruction at a time, using the Little Man Computer teaching machine.
+Meet the CPU one instruction at a time, using the Little Man Computer teaching machine. This is the first module.
 
 1. [A computer you can watch](https://liascript.github.io/course/?https://raw.githubusercontent.com/LordParsley/from-the-silicon-up/main/little-machine/lesson-01.md) - move a number, add to it, store it, jump, decide, and repeat. About 30-40 minutes.
 2. Input and decisions - coming soon.
 
-### More modules - coming soon
+## Coming soon
 
-The plan is to keep climbing: from this little machine up toward real programs. New lessons appear here when they are ready.
+The plan is to keep climbing from this little machine up toward real programs. New lessons and modules appear here when they are ready.
 
 ## Source and license
 
