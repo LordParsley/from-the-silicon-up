@@ -19,3 +19,7 @@ Meet the CPU one instruction at a time, using the Little Man Computer teaching m
 - Lesson 1: A computer you can watch - [source](little-machine/lesson-01.md) - [open in the interactive viewer](https://liascript.github.io/course/?https://raw.githubusercontent.com/LordParsley/from-the-silicon-up/main/little-machine/lesson-01.md)
 
 More modules are on the way.
+
+## License
+
+Course content is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). You may share and adapt it with attribution, under the same license. See [LICENSE](LICENSE).
