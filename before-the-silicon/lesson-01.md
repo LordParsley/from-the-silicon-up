@@ -241,7 +241,7 @@ So problems split in two:
 - **Computable**: an algorithm exists. Adding numbers, sorting names, finding the shortest route between two towns.
 - **Non-computable**: no algorithm exists, and none ever will. Telling, in general, whether an arbitrary programme halts is the classic case.
 
-So there are questions with definite answers that no machine, however fast or large, can answer in general.
+This is a surprising and powerful fact: there are questions with definite answers that no machine, however fast or large, can answer in general.
 
 ## 4. Computable or not?
 
