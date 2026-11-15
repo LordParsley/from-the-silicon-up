@@ -28,6 +28,6 @@ Meet the CPU one instruction at a time, using the Little Man Computer teaching m
 
 More modules are on the way.
 
-## License
+## Licence
 
-Course content is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). You may share and adapt it with attribution, under the same license. See [LICENSE](LICENSE).
+Course content is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). You may share and adapt it with attribution, under the same licence. See [LICENSE](LICENSE).

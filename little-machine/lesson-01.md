@@ -27,11 +27,11 @@ Keep this lesson and the simulator side by side if you have room. A laptop or de
 
 For each exercise:
 
-1. Copy the whole program into the simulator's assembly editor.
+1. Copy the whole programme into the simulator's assembly editor.
 2. Replace `???` with your answer. The simulator cannot assemble a question mark.
 3. Click **ASSEMBLE INTO RAM**. This loads the instructions and the starting data.
 4. Predict the result, then click **STEP** repeatedly. Watch the accumulator and program counter.
-5. To start again, assemble the program again. This also restores the `DAT` values.
+5. To start again, assemble the programme again. This also restores the `DAT` values.
 
 The answer boxes below check your typed answer in the lesson. They do not read your simulator. Use the worked answers after you have had a go.
 
@@ -61,7 +61,7 @@ We will stay with small non-negative numbers, so overflow and negative-number co
 
 ## 1. Take a number out of memory
 
-The mailbox named SEVEN already contains `7`. Complete one instruction so the program outputs `7`.
+The mailbox named SEVEN already contains `7`. Complete one instruction so the programme outputs `7`.
 
 ```text
 ??? SEVEN
@@ -166,7 +166,7 @@ SAVED is at address `04`. Watch it change from `0` to `7` when you step through 
 
 ## 4. Fix a broken jump
 
-This program should output `7`, but it stops without outputting anything. Change only the target of `BRA`.
+This programme should output `7`, but it stops without outputting anything. Change only the target of `BRA`.
 
 ```text
       LDA SEVEN
@@ -290,7 +290,7 @@ The data mailbox START stays `3`. The accumulator is doing the counting. Because
 
 You have moved a value into the CPU, changed it, stored it, jumped to another instruction, made a decision, and repeated work.
 
-The labels make the program readable. Underneath, the machine follows addresses and numbers.
+The labels make the programme readable. Underneath, the machine follows addresses and numbers.
 
 Before finishing, explain these in your own words:
 
