@@ -13,13 +13,13 @@ Before we meet a real computer, it is worth asking a stranger question: could yo
 
 People were building calculators long before electricity. In 1642, Blaise Pascal built one from gears and dials to help with his father's tax work. Water has even had a go: in 1949 the economist Bill Phillips built the MONIAC, a computer that modelled a whole national economy with water flowing through tanks and pipes. But water computes with levels, not digits.
 
-The clearest little adding machine of all uses something humbler: marbles, wood, and gravity. It really exists - people build them as workshop projects - and its one moving part works exactly like the switches inside a real chip.
+The clearest little adding machine uses something humbler: marbles, wood, and gravity. It really exists - people build them as workshop projects - and its one moving part works exactly like the switches inside a real chip.
 
 This lesson has no simulator and nothing to install. Allow about 25-30 minutes. The three ideas here (adding with carries, algorithms, and programmes) are the foundation for everything that follows.
 
 ## The marble adding machine
 
-Picture a row of four wooden rockers, like tiny see-saws, side by side. Each rocker tips to the left or the right. That is the whole memory of our machine.
+Picture a row of four wooden rockers, like tiny see-saws, side by side. Each rocker tips to the left or the right.
 
 A rocker tipped to the right means `1`. Tipped to the left means `0`.
 
@@ -82,12 +82,14 @@ Our machine, storing the number 5 (only the rockers worth 4 and 1 are tipped to 
 
 Here is the machine storing the number 5. Only the rockers worth 4 and 1 show `1`, and 4 + 1 = 5:
 
+<!-- data-type="None" -->
 | worth 8 | worth 4 | worth 2 | worth 1 | number stored |
 | --- | --- | --- | --- | --- |
 | 0 | 1 | 0 | 1 | 5 |
 
 And here are six different numbers, one per row:
 
+<!-- data-type="None" -->
 | Number stored | worth 8 | worth 4 | worth 2 | worth 1 |
 | --- | --- | --- | --- | --- |
 | 0 | 0 | 0 | 0 | 0 |
@@ -120,7 +122,7 @@ With four rockers, the largest number we can store is `1111` = 8 + 4 + 2 + 1 = 1
 
 ## One rule for adding
 
-Here is the whole trick. To **add 1**, drop a marble into the rightmost column (the one worth 1), and follow this rule:
+To **add 1**, drop a marble into the rightmost column (the one worth 1), and follow this rule:
 
 > When a marble lands on a rocker: if the rocker shows `0`, it tips to `1` and catches the marble, and you stop. If the rocker shows `1`, it tips back to `0` and the marble rolls on to the next column to the left, which follows the same rule.
 
@@ -239,7 +241,7 @@ So problems split in two:
 - **Computable**: an algorithm exists. Adding numbers, sorting names, finding the shortest route between two towns.
 - **Non-computable**: no algorithm exists, and none ever will. Telling, in general, whether an arbitrary programme halts is the classic case.
 
-This is a surprising and powerful fact: there are questions with definite answers that no machine, however fast or large, can answer in general.
+So there are questions with definite answers that no machine, however fast or large, can answer in general.
 
 ## 4. Computable or not?
 
@@ -263,8 +265,6 @@ The loop detector: non-computable. Speed is not the issue. Even infinitely fast 
 </details>
 
 ## The programme is data too
-
-One more idea, and it might be the deepest.
 
 Our marble machine had its rule drilled into whoever operated it. But we could write the rule down: "when a marble lands on a rocker, if it shows `1` then tip it to `0` and send the marble left, else tip it to `1` and catch it". Written down, the rule is just symbols on paper: **data**.
 

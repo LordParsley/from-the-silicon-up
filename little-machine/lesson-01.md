@@ -41,6 +41,7 @@ An instruction such as `LDA SEVEN` means "copy the value stored at SEVEN into th
 
 `SEVEN DAT 7` sets aside a mailbox containing `7`. `SEVEN` is a label: a name for that mailbox's address. `DAT` prepares memory; it is not an action for the CPU to run.
 
+<!-- data-type="None" -->
 | Instruction | Meaning |
 | --- | --- |
 | `LDA BOX` | Copy BOX's value into the accumulator |
@@ -268,6 +269,7 @@ ONE   DAT 1
 
 The accumulator starts at `3`.
 
+<!-- data-type="None" -->
 | Value at OUT | After SUB ONE | What happens next |
 | --- | --- | --- |
 | 3 | 2 | Not zero: BRA goes back to LOOP |
