@@ -9,9 +9,13 @@ comment: A tiny computer you can watch, one instruction at a time.
 
 *[From the Silicon Up](https://liascript.github.io/course/?https://raw.githubusercontent.com/LordParsley/from-the-silicon-up/main/course.md) - Little Machine, lesson 1*
 
-A computer follows small instructions, one at a time. In this lesson, you will make that happen yourself.
+Lesson 0 ended with the idea that makes computers universal: a programme is data, stored in the same memory the machine works on. That leaves a fair question. How do you write and save a valid programme as data?
 
-We will use the **Little Man Computer (LMC)**: a deliberately small teaching machine. No installation, no real assembly toolchain, and no need to memorise everything.
+You give the machine an **instruction set**: a small, fixed list of commands it knows how to respond to. Each command has a short name we can read, like `LDA` ("load") or `ADD`, and a number the machine actually stores, like `508` for "load mailbox 08". Write your programme as those numbers, save them in memory, and the machine can run them one at a time. Every number it meets is either a command from its list or a piece of data to work on.
+
+Real computers work exactly this way. A CPU's instruction set is its whole vocabulary, the complete list of things it can do. Storing instructions as numbers, in the same memory as the data, is the stored-programme idea computers have used since the 1940s.
+
+We will borrow the **Little Man Computer (LMC)**, a teaching machine with an instruction set of about ten commands. You will write programmes as data, load them into memory, and watch the machine obey them. No installation, no real assembly toolchain, and no need to memorise everything.
 
 Allow about 30-40 minutes. The aim is to predict what happens, then watch it happen.
 
