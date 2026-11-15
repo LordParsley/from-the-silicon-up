@@ -310,9 +310,6 @@ Before finishing, explain these in your own words:
 - What makes "season to taste" fail as an algorithm?
 - Why can the same computer run a game and a spreadsheet without new hardware?
 
-Next: [A computer you can watch](https://liascript.github.io/course/?https://raw.githubusercontent.com/LordParsley/from-the-silicon-up/main/little-machine/lesson-01.md), where we meet a real (tiny) machine that stores both its instructions and its data in memory, and we make it compute.
-
-[Back to the course home](https://liascript.github.io/course/?https://raw.githubusercontent.com/LordParsley/from-the-silicon-up/main/course.md)
 
 ## References
 
@@ -321,3 +318,13 @@ Next: [A computer you can watch](https://liascript.github.io/course/?https://raw
 - [Turing's 1936 paper, "On Computable Numbers"](https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf) - where the universal machine first appears, for the curious.
 - [Pascal's calculator](https://en.wikipedia.org/wiki/Pascal%27s_calculator) - the 1642 gear-driven adding machine.
 - [The MONIAC](https://en.wikipedia.org/wiki/Phillips_Machine) - the 1949 water-powered computer.
+
+## Where next?
+
+You have built an adding machine out of wood and gravity, said what an algorithm is, met a problem no machine can ever solve, and seen why a programme is just data.
+
+Next lesson: [A computer you can watch](https://liascript.github.io/course/?https://raw.githubusercontent.com/LordParsley/from-the-silicon-up/main/little-machine/lesson-01.md)
+
+A real (tiny) machine that stores its instructions and its data in the same memory - and we will make it compute.
+
+[Back to the course home](https://liascript.github.io/course/?https://raw.githubusercontent.com/LordParsley/from-the-silicon-up/main/course.md)
