@@ -159,6 +159,8 @@ THREE still contains `3` and FOUR still contains `4`. `ADD` changes the accumula
 
 ## 3. Put a result back in memory
 
+**Commands so far:** `LDA <BOX>` load · `STA <BOX>` store · `ADD <BOX>` add · `SUB <BOX>` subtract · `OUT` output · `BRA <PLACE>` jump · `BRZ <PLACE>` jump if zero · `HLT` stop
+
 Make SAVED contain `7` by the time the machine stops. There is no output instruction this time: inspect memory instead.
 
 ```text
@@ -191,6 +193,8 @@ SAVED is at address `04`. Watch it change from `0` to `7` when you step through 
 </details>
 
 ## 4. Fix a broken jump
+
+**Commands so far:** `LDA <BOX>` load · `STA <BOX>` store · `ADD <BOX>` add · `SUB <BOX>` subtract · `OUT` output · `BRA <PLACE>` jump · `BRZ <PLACE>` jump if zero · `HLT` stop
 
 This programme should output `7`, but it stops without outputting anything. Change only the target of `BRA`.
 
@@ -226,6 +230,8 @@ Watch the program counter. Changing where execution goes can change the result e
 </details>
 
 ## 5. Build a tiny "if"
+
+**Commands so far:** `LDA <BOX>` load · `STA <BOX>` store · `ADD <BOX>` add · `SUB <BOX>` subtract · `OUT` output · `BRA <PLACE>` jump · `BRZ <PLACE>` jump if zero · `HLT` stop
 
 We want: **if VALUE is zero, stop without output; otherwise output VALUE**.
 
@@ -263,6 +269,8 @@ The machine has no high-level `if` statement here. We made the decision by testi
 </details>
 
 ## 6. A small loop (optional stretch)
+
+**Commands so far:** `LDA <BOX>` load · `STA <BOX>` store · `ADD <BOX>` add · `SUB <BOX>` subtract · `OUT` output · `BRA <PLACE>` jump · `BRZ <PLACE>` jump if zero · `HLT` stop
 
 This one is a little longer. Make it output `3`, `2`, `1`, then stop. Fill in the one missing instruction name.
 
