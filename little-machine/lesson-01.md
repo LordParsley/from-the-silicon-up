@@ -48,13 +48,13 @@ An instruction such as `LDA SEVEN` means "copy the value stored at SEVEN into th
 <!-- data-type="None" -->
 | Instruction | Meaning |
 | --- | --- |
-| `LDA BOX` | Copy BOX's value into the accumulator |
-| `STA BOX` | Copy the accumulator's value into BOX |
-| `ADD BOX` | Add BOX's value to the accumulator |
-| `SUB BOX` | Subtract BOX's value from the accumulator |
+| `LDA <BOX>` | Copy `<BOX>`'s value into the accumulator |
+| `STA <BOX>` | Copy the accumulator's value into `<BOX>` |
+| `ADD <BOX>` | Add `<BOX>`'s value to the accumulator |
+| `SUB <BOX>` | Subtract `<BOX>`'s value from the accumulator |
 | `OUT` | Send the accumulator's value to the output |
-| `BRA PLACE` | Always continue at PLACE |
-| `BRZ PLACE` | Continue at PLACE if the accumulator is zero; otherwise continue on the next line |
+| `BRA <PLACE>` | Always continue at `<PLACE>` |
+| `BRZ <PLACE>` | Continue at `<PLACE>` if the accumulator is zero; otherwise continue on the next line |
 | `HLT` | Stop |
 
 We will stay with small non-negative numbers, so overflow and negative-number conventions can wait.
