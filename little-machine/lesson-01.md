@@ -74,6 +74,15 @@ Which instruction replaces `???`? Type just the three-letter instruction, in cap
 
 [[LDA]]
 
+Did you find yourself confused about why the `DAT` line sits at the end? Take a guess before reading on. Why does it go there?
+
+[[ ]] `DAT` only works at the end of a programme. The assembler refuses it anywhere else.
+[[ ]] It is just a style convention. The programme would run the same wherever the `DAT` lines sit.
+[[X]] The machine starts at mailbox `00` and works downward. It cannot tell data from instructions, so data must sit where execution never reaches it: after `HLT`.
+[[ ]] The mailboxes at the end of the programme are the ones with free space.
+
+The machine starts at mailbox `00` and runs downward until it hits `HLT`. It cannot tell data from instructions - both are just numbers in mailboxes. If `SEVEN DAT 7` sat in the middle, the machine would march straight into it and try to run `7` as a command. Putting the `DAT` lines after `HLT` means the machine stops before it ever reaches them. Position is the only thing separating code from data.
+
 Before stepping: what should happen to the accumulator on the first step?
 
 <details>
