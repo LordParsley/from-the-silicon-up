@@ -324,7 +324,7 @@ The data mailbox START stays `3`. The accumulator is doing the counting. Because
 
 You have moved a value into the CPU, changed it, stored it, jumped to another instruction, made a decision, and repeated work.
 
-The labels make the programme readable. Underneath, the machine follows addresses and numbers.
+Labels like `START` and `LOOP` - our names for mailbox addresses - make the programme readable. Under the hood, the machine follows only numbers.
 
 Before finishing, explain these in your own words:
 
