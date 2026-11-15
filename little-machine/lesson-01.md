@@ -76,10 +76,10 @@ Which instruction replaces `???`? Type just the three-letter instruction, in cap
 
 Did you find yourself confused about why the `DAT` line sits at the end? Take a guess before reading on. Why does it go there?
 
-[[ ]] `DAT` only works at the end of a programme. The assembler refuses it anywhere else.
-[[ ]] It is just a style convention. The programme would run the same wherever the `DAT` lines sit.
-[[X]] The machine starts at mailbox `00` and works downward. It cannot tell data from instructions, so data must sit where execution never reaches it: after `HLT`.
-[[ ]] The mailboxes at the end of the programme are the ones with free space.
+[( )] `DAT` only works at the end of a programme. The assembler refuses it anywhere else.
+[( )] It is just a style convention. The programme would run the same wherever the `DAT` lines sit.
+[(X)] The machine starts at mailbox `00` and works downward. It cannot tell data from instructions, so data must sit where execution never reaches it: after `HLT`.
+[( )] The mailboxes at the end of the programme are the ones with free space.
 
 The machine starts at mailbox `00` and runs downward until it hits `HLT`. It cannot tell data from instructions - both are just numbers in mailboxes. If `SEVEN DAT 7` sat in the middle, the machine would march straight into it and try to run `7` as a command. Putting the `DAT` lines after `HLT` means the machine stops before it ever reaches them. Position is the only thing separating code from data.
 
@@ -94,9 +94,9 @@ HLT
 
 It assembles without complaint. Predict what happens when you run it. What does the machine do on its first step?
 
-[[ ]] It runs normally. The machine knows `SEVEN DAT 7` is data, not a command.
-[[X]] It stops immediately and outputs nothing. It fetches the `7` in mailbox `00` and reads it as a command: `007`, which is `HLT`.
-[[ ]] It outputs `7` anyway, then stops.
+[( )] It runs normally. The machine knows `SEVEN DAT 7` is data, not a command.
+[(X)] It stops immediately and outputs nothing. It fetches the `7` in mailbox `00` and reads it as a command: `007`, which is `HLT`.
+[( )] It outputs `7` anyway, then stops.
 
 Run it in the simulator and watch. The programme halts on its very first step and the output stays empty. The machine fetched the number `007` from mailbox `00`, read the leading `0` as `HLT`, and stopped. It never reached your real instructions at all.
 
