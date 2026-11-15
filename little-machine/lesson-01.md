@@ -83,6 +83,23 @@ Did you find yourself confused about why the `DAT` line sits at the end? Take a 
 
 The machine starts at mailbox `00` and runs downward until it hits `HLT`. It cannot tell data from instructions - both are just numbers in mailboxes. If `SEVEN DAT 7` sat in the middle, the machine would march straight into it and try to run `7` as a command. Putting the `DAT` lines after `HLT` means the machine stops before it ever reaches them. Position is the only thing separating code from data.
 
+What if we break the rule? The same programme, with the data moved to the start:
+
+```text
+SEVEN DAT 7
+LDA SEVEN
+OUT
+HLT
+```
+
+It assembles without complaint. Predict what happens when you run it. What does the machine do on its first step?
+
+[[ ]] It runs normally. The machine knows `SEVEN DAT 7` is data, not a command.
+[[X]] It stops immediately and outputs nothing. It fetches the `7` in mailbox `00` and reads it as a command: `007`, which is `HLT`.
+[[ ]] It outputs `7` anyway, then stops.
+
+Run it in the simulator and watch. The programme halts on its very first step and the output stays empty. The machine fetched the number `007` from mailbox `00`, read the leading `0` as `HLT`, and stopped. It never reached your real instructions at all.
+
 Before stepping: what should happen to the accumulator on the first step?
 
 <details>
