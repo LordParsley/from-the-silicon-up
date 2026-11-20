@@ -10,7 +10,7 @@ link: https://cdn.jsdelivr.net/gh/LordParsley/from-the-silicon-up@main/assets/st
 
 # A machine that adds
 
-*[From the Silicon Up](../course.md) - Before the Silicon, lesson 0*
+*[From the Silicon Up](https://lordparsley.github.io/from-the-silicon-up/) - Before the Silicon, lesson 0*
 
 Before we meet a real computer, it is worth asking a stranger question: could you build an adding machine with no electricity in it at all?
 
@@ -326,8 +326,8 @@ Before finishing, explain these in your own words:
 
 You have built an adding machine out of wood and gravity, said what an algorithm is, met a problem no machine can ever solve, and seen why a programme is just data.
 
-Next lesson: [A computer you can watch](../little-machine/lesson-01.md)
+Next lesson: [A computer you can watch](https://lordparsley.github.io/from-the-silicon-up/little-machine/)
 
 A real (tiny) machine that stores its instructions and its data in the same memory - and we will make it compute.
 
-[Back to the course home](../course.md)
+[Back to the course home](https://lordparsley.github.io/from-the-silicon-up/)
