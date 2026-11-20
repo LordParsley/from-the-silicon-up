@@ -10,7 +10,7 @@ link: https://cdn.jsdelivr.net/gh/LordParsley/from-the-silicon-up@main/assets/st
 
 # A computer you can watch
 
-*[From the Silicon Up](../course.md) - Little Machine, lesson 1*
+*[From the Silicon Up](https://lordparsley.github.io/from-the-silicon-up/) - Little Machine, lesson 1*
 
 Lesson 0 ended with the idea that makes computers universal: a programme is data, stored in the same memory the machine works on. That leaves a fair question. How do you write and save a valid programme as data?
 
@@ -337,7 +337,7 @@ Before finishing, explain these in your own words:
 
 Next time: accept input and choose between two different results.
 
-[Back to the course home](../course.md)
+[Back to the course home](https://lordparsley.github.io/from-the-silicon-up/)
 
 ## References
 
