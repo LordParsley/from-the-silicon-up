@@ -3,11 +3,14 @@ author: Kyle
 version: 0.2.0
 language: en
 comment: Adding machines, algorithms, and programmes, before any electronics.
+logo: https://cdn.jsdelivr.net/gh/LordParsley/from-the-silicon-up@main/assets/logo.svg
+link: https://cdn.jsdelivr.net/gh/LordParsley/from-the-silicon-up@main/assets/style.css
+      https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap
 -->
 
 # A machine that adds
 
-*[From the Silicon Up](https://liascript.github.io/course/?https://raw.githubusercontent.com/LordParsley/from-the-silicon-up/main/course.md) - Before the Silicon, lesson 0*
+*[From the Silicon Up](../course.md) - Before the Silicon, lesson 0*
 
 Before we meet a real computer, it is worth asking a stranger question: could you build an adding machine with no electricity in it at all?
 
@@ -323,8 +326,8 @@ Before finishing, explain these in your own words:
 
 You have built an adding machine out of wood and gravity, said what an algorithm is, met a problem no machine can ever solve, and seen why a programme is just data.
 
-Next lesson: [A computer you can watch](https://liascript.github.io/course/?https://raw.githubusercontent.com/LordParsley/from-the-silicon-up/main/little-machine/lesson-01.md)
+Next lesson: [A computer you can watch](../little-machine/lesson-01.md)
 
 A real (tiny) machine that stores its instructions and its data in the same memory - and we will make it compute.
 
-[Back to the course home](https://liascript.github.io/course/?https://raw.githubusercontent.com/LordParsley/from-the-silicon-up/main/course.md)
+[Back to the course home](../course.md)

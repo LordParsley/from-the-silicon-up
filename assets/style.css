@@ -1,0 +1,40 @@
+/* From the Silicon Up - LiaScript custom style */
+:root {
+  --ftsu-brand: #0e7490;
+}
+
+body {
+  font-family: 'IBM Plex Sans', 'Segoe UI', Helvetica, Arial, sans-serif !important;
+}
+
+code, pre, .lia-code, .lia-input, kbd {
+  font-family: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace !important;
+}
+
+h1.lia-h1, h2.lia-h2, h3.lia-h3 {
+  font-weight: 600 !important;
+}
+
+.lia-slide .lia-toolbar {
+  background: var(--ftsu-brand) !important;
+}
+
+.lia-toc .lia-toolbar {
+  background: var(--ftsu-brand) !important;
+}
+
+.lia-btn {
+  background: var(--ftsu-brand) !important;
+}
+
+.lia-input {
+  background: var(--ftsu-brand) !important;
+}
+
+.lia-active {
+  background: var(--ftsu-brand) !important;
+}
+
+.lia-quote {
+  background: var(--ftsu-brand) !important;
+}

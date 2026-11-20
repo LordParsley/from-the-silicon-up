@@ -3,11 +3,14 @@ author: Kyle
 version: 0.1.0
 language: en
 comment: A tiny computer you can watch, one instruction at a time.
+logo: https://cdn.jsdelivr.net/gh/LordParsley/from-the-silicon-up@main/assets/logo.svg
+link: https://cdn.jsdelivr.net/gh/LordParsley/from-the-silicon-up@main/assets/style.css
+      https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap
 -->
 
 # A computer you can watch
 
-*[From the Silicon Up](https://liascript.github.io/course/?https://raw.githubusercontent.com/LordParsley/from-the-silicon-up/main/course.md) - Little Machine, lesson 1*
+*[From the Silicon Up](../course.md) - Little Machine, lesson 1*
 
 Lesson 0 ended with the idea that makes computers universal: a programme is data, stored in the same memory the machine works on. That leaves a fair question. How do you write and save a valid programme as data?
 
@@ -334,7 +337,7 @@ Before finishing, explain these in your own words:
 
 Next time: accept input and choose between two different results.
 
-[Back to the course home](https://liascript.github.io/course/?https://raw.githubusercontent.com/LordParsley/from-the-silicon-up/main/course.md)
+[Back to the course home](../course.md)
 
 ## References
 

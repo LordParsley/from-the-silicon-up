@@ -3,6 +3,9 @@ author: Kyle
 version: 0.1.0
 language: en
 comment: Course home. How computers work, starting from the machine itself.
+logo: https://cdn.jsdelivr.net/gh/LordParsley/from-the-silicon-up@main/assets/logo.svg
+link: https://cdn.jsdelivr.net/gh/LordParsley/from-the-silicon-up@main/assets/style.css
+      https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap
 -->
 
 # From the Silicon Up
@@ -23,13 +26,13 @@ A laptop or desktop will be more comfortable than a phone.
 
 The big ideas, before any electronics: an adding machine built from marbles and gravity, what an algorithm is, which problems no machine can solve, and why a programme is just data. This is the first module.
 
-- Lesson 0: [A machine that adds](https://liascript.github.io/course/?https://raw.githubusercontent.com/LordParsley/from-the-silicon-up/main/before-the-silicon/lesson-01.md) - build a marble-powered adding machine in your head, then meet the ideas that make computers universal. About 25-30 minutes.
+- Lesson 0: [A machine that adds](before-the-silicon/lesson-01.md) - build a marble-powered adding machine in your head, then meet the ideas that make computers universal. About 25-30 minutes.
 
 ## Little Machine
 
 Meet the CPU one instruction at a time, using the Little Man Computer teaching machine. This is the second module.
 
-- Lesson 1: [A computer you can watch](https://liascript.github.io/course/?https://raw.githubusercontent.com/LordParsley/from-the-silicon-up/main/little-machine/lesson-01.md) - move a number, add to it, store it, jump, decide, and repeat. About 30-40 minutes.
+- Lesson 1: [A computer you can watch](little-machine/lesson-01.md) - move a number, add to it, store it, jump, decide, and repeat. About 30-40 minutes.
 - Lesson 2: Input and decisions - coming soon.
 
 ## Coming soon
