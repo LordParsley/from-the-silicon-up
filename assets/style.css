@@ -50,6 +50,24 @@ h1.lia-h1, h2.lia-h2, h3.lia-h3 {
   color: var(--ftsu-brand-dark) !important;
 }
 
+/* Bottom pager: soft tint pill with brand glyphs and page number, not a solid teal bar */
+.lia-pagination__content {
+  background: rgba(14, 116, 144, 0.12) !important;
+}
+
+.lia-pagination__content .lia-btn,
+.lia-pagination__content .lia-btn:hover,
+.lia-pagination__content .lia-btn:focus,
+.lia-pagination__content .lia-btn__icon {
+  background: transparent !important;
+  color: var(--ftsu-brand-dark) !important;
+}
+
+.lia-pagination__current,
+.lia-pagination__current .font-400 {
+  color: var(--ftsu-brand-dark) !important;
+}
+
 /* Quotes keep a soft brand tint */
 .lia-quote {
   background: rgba(14, 116, 144, 0.08) !important;
