@@ -3,8 +3,8 @@ author: Kyle
 version: 0.1.0
 language: en
 comment: A tiny computer you can watch, one instruction at a time.
-logo: https://cdn.jsdelivr.net/gh/LordParsley/from-the-silicon-up@main/assets/logo.svg
-link: https://cdn.jsdelivr.net/gh/LordParsley/from-the-silicon-up@main/assets/style.css
+logo: https://lordparsley.github.io/from-the-silicon-up/assets/logo.svg
+link: https://lordparsley.github.io/from-the-silicon-up/assets/style.css
       https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap
 -->
 

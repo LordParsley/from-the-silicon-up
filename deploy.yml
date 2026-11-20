@@ -1,0 +1,42 @@
+name: Build and deploy course site
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install LiaScript-Exporter
+        run: npm install -g @liascript/exporter
+
+      - name: Export course home as a standalone web bundle
+        run: liaex -i course.md --format web --output site --web-indexeddb from-the-silicon-up
+
+      - name: Export lesson 0 into its module folder
+        run: liaex -i before-the-silicon/lesson-01.md --format web --output site/before-the-silicon --web-indexeddb ftsu-l0-marble
+
+      - name: Export lesson 1 into its module folder
+        run: liaex -i little-machine/lesson-01.md --format web --output site/little-machine --web-indexeddb ftsu-l1-lmc
+
+      - name: Use the course logo as the header icon
+        run: |
+          cp assets/logo.svg site/icon.svg
+          cp assets/logo.svg site/before-the-silicon/icon.svg
+          cp assets/logo.svg site/little-machine/icon.svg
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: site
