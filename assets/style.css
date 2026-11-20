@@ -1,13 +1,14 @@
 /* From the Silicon Up - LiaScript custom style */
 :root {
   --ftsu-brand: #0e7490;
+  --ftsu-brand-dark: #155e75;
 }
 
 body {
   font-family: 'IBM Plex Sans', 'Segoe UI', Helvetica, Arial, sans-serif !important;
 }
 
-code, pre, .lia-code, .lia-input, kbd {
+code, pre, .lia-code, kbd {
   font-family: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace !important;
 }
 
@@ -15,26 +16,41 @@ h1.lia-h1, h2.lia-h2, h3.lia-h3 {
   font-weight: 600 !important;
 }
 
-.lia-slide .lia-toolbar {
-  background: var(--ftsu-brand) !important;
+/* Accent on text links, never as a filled block behind glyphs */
+.lia-content a, .lia-content a:visited {
+  color: var(--ftsu-brand-dark) !important;
 }
 
+.lia-content a:hover {
+  color: var(--ftsu-brand) !important;
+}
+
+/* Toolbar and icon buttons: clear fill, brand-coloured glyphs */
+.lia-slide .lia-toolbar,
 .lia-toc .lia-toolbar {
-  background: var(--ftsu-brand) !important;
+  background: transparent !important;
 }
 
-.lia-btn {
-  background: var(--ftsu-brand) !important;
+.lia-btn, .lia-btn:hover, .lia-btn:focus {
+  background: transparent !important;
+  color: var(--ftsu-brand-dark) !important;
+  border-color: rgba(14, 116, 144, 0.45) !important;
 }
 
+/* Quiz input fields: white with a brand border, not solid blocks */
 .lia-input {
-  background: var(--ftsu-brand) !important;
+  background: transparent !important;
+  color: inherit !important;
+  border-color: rgba(14, 116, 144, 0.45) !important;
 }
 
+/* Active table-of-contents entry: soft tint instead of a solid block */
 .lia-active {
-  background: var(--ftsu-brand) !important;
+  background: rgba(14, 116, 144, 0.12) !important;
+  color: var(--ftsu-brand-dark) !important;
 }
 
+/* Quotes keep a soft brand tint */
 .lia-quote {
-  background: var(--ftsu-brand) !important;
+  background: rgba(14, 116, 144, 0.08) !important;
 }
